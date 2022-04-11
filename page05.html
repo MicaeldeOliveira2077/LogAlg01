@@ -1,62 +1,67 @@
-<DOCTYPE html>
-  <html lang="pt-BR">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
-      <title>Login</title>
-    </head>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <body>
-      <div id="mensagem"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Login</title>
+</head>
 
-      <form>
-        <div>Digite suas credenciais:</div>
-        <label
-          >Login:
-          <input type="text" id="login" autocomplete="off" autofocus /></label
-        ><br />
-        <label
-          >Senha: <input type="password" id="senha" autocomplete="off" /></label
-        ><br />
-        <label
-          ><input type="checkbox" id="logado" value="sim" /> Mantenha-me
-          logado.</label
-        ><br />
-        <button type="submit" id="enviar">Entrar</button>
-      </form>
+<body>
+  <div id="mensagem"></div>
 
-      <script>
-        // Login e senha do usuário
-        const loginUsuario = "joca";
-        const loginSenha = "1234";
+  <form>
+    <div>Digite suas credenciais:</div>
+    <label>Login:
+      <input type="text" id="login" autocomplete="off" autofocus /></label><br />
+    <label>Senha: <input type="password" id="senha" autocomplete="off" /></label><br />
+    <label><input type="checkbox" id="logado" value="sim" /> Mantenha-me
+      logado.</label><br />
+    <button type="submit" id="enviar">Entrar</button>
+  </form>
 
-        // Quando clicar em 'id="enviar"'
-        enviar.onclick = () => {
-          // Ler o valor do 'Login' digitado
-          var formUsuario = login.value;
+  <script>
+    // Login e senha do usuário
+    const loginUsuario = 'joca';
+    const loginSenha = '1234';
 
-          // Ler o valor da 'Senha'  digitada
-          var formSenha = senha.value;
+    // Quando clicar em 'id="enviar"'
+    enviar.onclick = () => {
 
-          // Testa se usuário e senha estão corretos
-          if (
-            // Primeira expressão
-            formUsuario == loginUsuario
-            // AND
-             &&
-            // Segunda expressão
-            formSenha == loginSenha
-          ) {
-            console.log("usuario ok.");
-          } else {
-            console.error("oooops!");
-          }
-            // Não faça mais nada.
-            return false;
-        }
-      </script>
-    </body>
-  </html>
-</DOCTYPE>
+      // Ler o valor do 'Login' digitado
+      var formUsuario = login.value;
+
+      // Ler o valor da 'Senha'  digitada
+      var formSenha = senha.value;
+
+      // Testa se usuário e senha estão corretos
+      if (
+        // Primeira expressão
+        formUsuario == loginUsuario //true
+
+        // AND
+        &&
+
+        // Segunda expressão
+        formSenha == loginSenha //true
+      ) {
+
+        // Escreve na caixa de mensagem
+        mensagem.innerHTML = `Olá ${formUsuario} Seja bem-vindo!` ;
+
+      } else {
+
+        // Escreve na caixa de mensagem
+        mensagem.innerHTML = "Ooops! Algo errado não deu certo!";
+      }
+
+      // Não faça mais nada.
+      return false;
+    }
+
+  </script>
+</body>
+
+</html>
